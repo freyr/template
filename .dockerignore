@@ -1,0 +1,5 @@
+**/*.*
+!.image
+!composer.*
+!public
+!src
