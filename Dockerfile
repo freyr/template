@@ -53,7 +53,7 @@ COPY --chown=www-data:www-data --from=vendor-development /build/vendor /app/vend
 USER www-data
 RUN composer dump-autoload -o --apcu --no-scripts
 
-FROM app-common as app-production
+FROM app-local as app-production
 COPY .image/production/php/*.ini $PHP_INI_DIR/conf.d/
 COPY .image/production/php/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
 COPY --chown=www-data:www-data . .
