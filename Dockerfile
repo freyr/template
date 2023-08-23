@@ -1,6 +1,6 @@
 # WEB
 FROM nginx:1.23.1 as web-local
-EXPOSE 80
+EXPOSE 8080
 COPY .image/development/nginx/ /etc/nginx/
 
 FROM web-local as web-development
