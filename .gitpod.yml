@@ -1,5 +1,6 @@
 tasks:
   - init: |
+      cp .env.dist .env
       docker compose build
       docker compose run --rm app composer install
   - command: |
@@ -8,10 +9,3 @@ tasks:
 ports:
   - port: 8080
     onOpen: open-browser
-
-image:
-  file: .gitpod.Dockerfile
-
-vscode:
-  extensions:
-    - felixfbecker.php-debug
