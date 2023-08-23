@@ -3,6 +3,10 @@ services:
     build:
       context: "."
       target: app-local
+    ports:
+      - "9000:9000"
+    networks:
+      - template
     volumes:
       - ./:/app
 
@@ -10,21 +14,16 @@ services:
     build:
       context: "."
       target: web-local
-    labels:
-      traefik.enable: true
-      traefik.docker.network: phpcon-dev
-      traefik.http.routers.phpcon.entrypoints: websecure
-      traefik.http.routers.phpcon.rule: Host(`template.phpcon-dev.pl`)
-      traefik.http.routers.phpcon.tls: true
-    networks:
-      default: ~
-      phpcon-dev: ~
     volumes:
       - ./public/:/app/public
+    ports:
+      - "80:8080"
+    networks:
+      - template
     depends_on:
       app:
         condition: service_started
 
 networks:
-  phpcon-dev:
-    external: true
+  template:
+    driver: bridge
