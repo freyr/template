@@ -3,8 +3,6 @@ services:
     build:
       context: "."
       target: app-local
-    ports:
-      - "9000:9000"
     networks:
       - template
     volumes:

@@ -1,12 +1,17 @@
 tasks:
   - init: |
       docker compose build
+      docker compose run --rm app composer install
   - command: |
       docker compose up
-
 
 ports:
   - port: 8080
     onOpen: open-browser
-  - port: 9000
-    onOpen: ignore
+
+image:
+  file: .gitpod.Dockerfile
+
+vscode:
+  extensions:
+    - felixfbecker.php-debug
