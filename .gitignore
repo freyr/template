@@ -1,3 +1,5 @@
 vendor
+var
 .env
 .phpunit.result.cache
+compose.override.yaml

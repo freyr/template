@@ -1,5 +1,8 @@
 **/*.*
 !.image
-!composer.*
 !public
+!bin
 !src
+!tests
+!composer.*
+!phpunit.xml

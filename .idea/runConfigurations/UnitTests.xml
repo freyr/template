@@ -2,7 +2,7 @@
   <configuration default="false" name="UnitTests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
     <CommandLine>
       <PhpTestInterpreterSettings>
-        <option name="interpreterName" value="app" />
+        <option name="interpreterName" value="php" />
       </PhpTestInterpreterSettings>
     </CommandLine>
     <TestRunner configuration_file="/app/phpunit.xml" scope="XML" />

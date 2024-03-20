@@ -16,13 +16,13 @@ destroy: # Kill all containers, remove volumes and networks
 	docker compose down
 
 install: # install composer dependencies using app service
-	docker compose run --rm app composer install
+	docker compose run --rm php composer install
 
 update: # updates composer dependencies using app service
-	docker compose run --rm app composer install
+	docker compose run --rm php composer install
 
 app: # attach to running app service with bash shell
-	docker compose exec app bash
+	docker compose exec php bash
 
 test: # Run phpunit tests
-	docker compose run --rm app ./vendor/bin/phpunit
+	docker compose run --rm php ./vendor/bin/phpunit

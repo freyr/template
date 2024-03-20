@@ -1,9 +1,11 @@
 <?php
 
-use Freyr\Template\Initializer;
+declare(strict_types=1);
 
-echo "Hello world! It's Nice here! <br>";
-require_once __DIR__ . '/../vendor/autoload.php';
+use Freyr\Template\Kernel;
 
-$initializer = new Initializer();
-echo "4 + 5 = ". $initializer->add(4,5);
+require_once __DIR__ . '/../vendor/autoload_runtime.php';
+
+return function (array $context): Kernel {
+    return new Kernel($context['APP_ENV'], (bool) $context['APP_DEBUG']);
+};

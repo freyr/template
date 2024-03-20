@@ -1,0 +1,11 @@
+labels:
+  traefik.enable: true
+  traefik.docker.network: web
+  traefik.http.routers.example.entrypoints: websecure
+  traefik.http.routers.example.rule: Host(`template.local-dev.dev`)
+  traefik.http.routers.example.tls: true
+
+
+networks:
+  web:
+    external: true
